@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: aliceblue;
+}
+
+header {
+    background-color: cadetblue;
+    display: flex;
+}
+
+.nav {
+    display: flex;
+}
+
+.logo {
+    display: flex;
+    padding: 10px 10px 10px 10px;
+    gap: 20px;
+}
+
+.logo img {
+    display: flex;
+    width: 80px;
+}
+
+.logo h5 {
+    display: flex;
+    color: aliceblue;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2em;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul { 
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0 0 0 120px;
+}
+
+nav li {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+nav a,
+nav a:visited {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+.search-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 0 0 240px;
+}
+
+.search-input input {
+    display: flex;
+    width: 290px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.658);
+    padding: 0 0 0 10px;
+}
+
+.search-input button {
+    display: flex;
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+    padding: 5px;
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform 120ms ease, background-color 120ms ease, color 120ms ease;
+    border-radius: 10px;
+}
+
+.search-input button:hover {
+    transform: scale(1.08);
+    background-color: rgba(240, 248, 255, 0.445);
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+}
+
+.search-input i {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-Btn {
+    display: flex;
+    width: 60px;
+    height: 35px;
+    justify-content: center;
+    align-items: center;
+}
