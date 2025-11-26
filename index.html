@@ -14,20 +14,40 @@
                 <img src="images/Design ohne Titel (3)-Photoroom.png" alt="img">
                 <h5>Wetter App</h5>
             <ul>
-                <li><a href="">Meine Orte</a></li>
+                <li>
+                    <a href="#" class="myort" aria-haspopup="true" aria-expanded="false">Meine Orte</a>
+                    <div class="myortWindow" role="menu" aria-hidden="true">
+                        <ul>
+                            <li><a href="#">Mildenau</a></li>
+                            <li><a href="#">Ort 2</a></li>
+                            <li><a href="#">Ort 3</a></li>
+                        </ul>
+                    </div>
+                </li>
                 <li><a href="">Vorhersagen</a></li>
                 <li><a href="">Regenradar</a></li>
                 <li><a href="">Hilfe</a></li>
             </ul>
             <div class="search-input">
                 <input type="text" placeholder="Suche..." id="searchInput">
-                <button class="search-Btn">
+                <button class="search-Btn" onclick="getWether()">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
             </div>
-            <button class="login-Btn" id="loginBtn">Login</button>
+            <div class="login-container">
+                <button class="login-Btn" id="loginBtn">Login</button>
+            </div>
         </nav>
     </header>
+    <main>
+        <section class="wether-window">
+            <p><strong>Temp:</strong><span id="temp"></span>C</p>
+            <p><strong>Speed:</strong><span id="speed"></span>Kmh</p>
+        </section>
+
+       <button onclick="getLocation()">Try It</button>
+       <p id="demo"></p>
+    </main>
 </body>
 <script src="src/script.js"></script>
 </html>

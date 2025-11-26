@@ -39,7 +39,7 @@ header {
 
 nav ul { 
     display: flex;
-    gap: 20px;
+    gap: 40px;
     list-style: none;
     padding: 0 0 0 120px;
 }
@@ -48,20 +48,77 @@ nav li {
     display: flex;
     list-style: none;
     align-items: center;
+    position: relative; /* nötig, damit das Dropdown relativ zum Item positioniert ist */
 }
 
 nav a,
 nav a:visited {
+    font-family: Andale Mono, monospace;
     text-decoration: none;
     color: white;
     font-size: 20px;
+    font-weight: bold;
 }
+
+nav a:hover {
+    color: rgb(226, 210, 185);
+    font-weight: bold;
+}
+
+/* ersetzt die alte .myortWindow-Definition */
+.myortWindow {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 8px);
+    min-width: 200px;
+    max-width: 320px;
+    padding: 8px;
+    background-color: cadetblue;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 6px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-5px);
+    transition: opacity 160ms ease, transform 160ms ease, visibility 160ms;
+    z-index: 999;
+    pointer-events: none; /* nicht klickbar, solange verborgen */
+}
+
+/* Zeige das Dropdown bei Hover und bei Tastatur-Fokus (barrierefrei) */
+nav li:hover .myortWindow,
+nav li:focus-within .myortWindow {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Optional: Stil für die Liste innerhalb des Fensters */
+.myortWindow ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.myortWindow li {
+    padding: 6px 8px;
+}
+.myortWindow a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+.myort:hover { cursor: pointer; }
 
 .search-input {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 0 0 0 240px;
+    padding: 0 20px 0 20px;
+    border-radius: 20px 10px 50px;
+    background-color: rgb(226, 210, 185);
+    margin: 0 0 0 140px;
+    box-shadow: 1px 1px 2px black;
 }
 
 .search-input input {
@@ -100,10 +157,52 @@ nav a:visited {
     align-items: center;
 }
 
-.login-Btn {
+.search-input input:focus {
+    outline: none;
+}
+
+.login-container {
     display: flex;
-    width: 60px;
-    height: 35px;
     justify-content: center;
     align-items: center;
+    padding: 0 0 0 240px;
 }
+
+.login-Btn {
+    display: flex;
+    width: 80px;
+    height: 35px;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 2px solid;
+    border-color: rgb(255, 255, 255);
+    transition: background-color 150ms ease;
+}
+
+.login-Btn:hover {
+    background-color: white;
+}
+
+main {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.wether-window  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace;
+    padding: 0px 0 150px 0;
+    font-size: 20px;
+    width: 200px;
+    height: 300px;
+    background-color: cadetblue;
+}
+
+
